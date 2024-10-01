@@ -1,1 +1,83 @@
 /*  your css code here. If applicable */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: wheat;
+    /* align-items: center; */
+}
+.container {
+    display: block;
+    margin: 30px;
+    text-align: center;
+}
+h1 {
+    font-family: "Permanent Marker", cursive;
+    font-style:oblique;
+    font-size: 3rem;
+}
+
+.container > form {
+    font-size: larger;
+    font-weight:bold;
+}
+.one > input, .two > input{
+    margin: 5px;
+    padding: 15px;
+    width: 225px;
+    border: 2px solid black;
+    outline: none;
+    font-family: "permanent Marker", cursive;
+}
+.container > button {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    margin: 5px;
+    font-size: 2em;
+    padding: 0 5px 5px 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 250px;
+}
+.container > button:active {
+    background-color: lightgray;
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+/* ////////////////////////////////////////////////////////// */
+
+.game-container {
+    display: none;
+}
+.message {
+    font-family: "Permanent Marker", cursive;
+    margin: 10px;
+    text-align: center;
+    align-content: center;
+}
+.board {
+    
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #6f1b2d;
+}
+
+.cell {
+    font-family: "Permanent Marker", cursive;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    align-content: center;
+    border: 1px solid black;
+    cursor: pointer;
+    box-shadow: 0 0 5px black;
+}
+.won {
+    background: purple;
+}
+

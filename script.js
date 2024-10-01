@@ -12,7 +12,7 @@ startGame.addEventListener("click", (e) => {
     if (playerOne.value !== "" && playerTwo.value !== "") {
         container.style.display = "none"
         gameContainer.style.display = "block"
-        message.innerHTML = `${playerOne.value}, You're up`
+        message.innerHTML = `${playerOne.value}, you're up`
     } else {
         setTimeout(() => {
             alert("Player Names required")
@@ -27,7 +27,7 @@ cells.forEach(cell => {
 });
 
 function playGame(e) {
-    if (message.innerHTML === `${playerOne.value}, You're up` ) {
+    if (message.innerHTML === `${playerOne.value}, you're up` ) {
         if (e.target.innerHTML === "") {
             e.target.innerHTML = "X";
         } else {

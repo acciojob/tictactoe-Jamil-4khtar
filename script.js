@@ -3,8 +3,8 @@
 const startGame = document.getElementById("submit");
 const container = document.querySelector(".container");
 const gameContainer = document.querySelector(".game-container");
-const playerOne = document.getElementById("player-1");
-const playerTwo = document.getElementById("player-2");
+const playerOne = document.getElementById("player1");
+const playerTwo = document.getElementById("player2");
 const message = document.querySelector(".message");
 
 startGame.addEventListener("click", (e) => {
@@ -69,16 +69,15 @@ function checkWin() {
             cells[combination[0]].classList.add("won")
             cells[combination[1]].classList.add("won")
             cells[combination[2]].classList.add("won")
-            message.innerHTML = ""
-            setTimeout(() => {
-                alert(`${winner} is the Winner!`);
+            message.innerHTML = `${winner}, congratulations you won!`
+            /* setTimeout(() => {
                 cells.forEach(c => {
                     c.innerHTML = ""
                     cells[combination[0]].classList.remove("won")
                     cells[combination[1]].classList.remove("won")
                     cells[combination[2]].classList.remove("won")
                 })
-            }, 500);
+            }, 500); */
         }
     });
 }

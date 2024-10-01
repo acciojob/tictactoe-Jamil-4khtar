@@ -69,7 +69,7 @@ function checkWin() {
             cells[combination[0]].classList.add("won")
             cells[combination[1]].classList.add("won")
             cells[combination[2]].classList.add("won")
-            message.innerHTML = `${winner}, congratulations you won!`
+            message.innerHTML = `${winner} congratulations you won!`
             /* setTimeout(() => {
                 cells.forEach(c => {
                     c.innerHTML = ""

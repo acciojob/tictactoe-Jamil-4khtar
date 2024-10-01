@@ -6,6 +6,8 @@ const gameContainer = document.querySelector(".game-container");
 const playerOne = document.getElementById("player1");
 const playerTwo = document.getElementById("player2");
 const message = document.querySelector(".message");
+let currPlayer;
+let winner;
 
 startGame.addEventListener("click", (e) => {
     e.preventDefault();
@@ -13,6 +15,7 @@ startGame.addEventListener("click", (e) => {
         container.style.display = "none"
         gameContainer.style.display = "block"
         message.innerHTML = `${playerOne.value}, you're up`
+        currPlayer = playerOne.value;
     } else {
         setTimeout(() => {
             alert("Player Names required")
@@ -20,31 +23,32 @@ startGame.addEventListener("click", (e) => {
     }
 })
 
-let winner;
 let cells = document.querySelectorAll(".cell");
 cells.forEach(cell => {
     cell.addEventListener("click", playGame);
 });
 
 function playGame(e) {
-    if (message.innerHTML === `${playerOne.value}, you're up` ) {
+    if (currPlayer === playerOne.value) {
         if (e.target.innerHTML === "") {
             e.target.innerHTML = "X";
         } else {
             e.target.innerHTML = "";
         }
-        winner = playerOne.value;
-        message.innerHTML = `${playerTwo.value}, You're up`;
+        winner = currPlayer
+        currPlayer = playerTwo.value;
+        message.innerHTML = `${currPlayer}, you're up`;
         checkWin()
     }
-    else if (message.innerHTML === `${playerTwo.value}, You're up`) {
+    else if (currPlayer === playerTwo.value) {
         if (e.target.innerHTML === "") {
-            e.target.innerHTML = "0";
+            e.target.innerHTML = "O";
         } else {
             e.target.innerHTML = "";
         }
-        winner = playerTwo.value;
-        message.innerHTML = `${playerOne.value}, You're up`;
+        winner = currPlayer
+        currPlayer = playerOne.value;
+        message.innerHTML = `${currPlayer}, you're up`;
         checkWin()
     }
 }
@@ -69,7 +73,7 @@ function checkWin() {
             cells[combination[0]].classList.add("won")
             cells[combination[1]].classList.add("won")
             cells[combination[2]].classList.add("won")
-            message.innerHTML = `${winner} congratulations you won!`
+            message.innerHTML = `${winner}, congratulations you won!`
             /* setTimeout(() => {
                 cells.forEach(c => {
                     c.innerHTML = ""

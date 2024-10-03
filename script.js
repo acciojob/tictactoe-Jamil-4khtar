@@ -62,7 +62,7 @@ const submitButton = document.getElementById('submit');
             }
 
             if (roundWon) {
-                messageDiv.innerText = `${currentPlayer === 'X' ? player1 : player2} congratulations, you won!`;
+                messageDiv.innerText = `${currentPlayer === 'X' ? player1 : player2} congratulations you won!`;
                 gameActive = false;
                 return;
             }

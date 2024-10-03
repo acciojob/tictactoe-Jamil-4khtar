@@ -73,6 +73,6 @@ const submitButton = document.getElementById('submit');
                 return;
             }
 
-            currentPlayer = currentPlayer === 'x' ? 'O' : 'x';
+            currentPlayer = currentPlayer === 'x' ? 'o' : 'x';
             messageDiv.innerText = `${currentPlayer === 'x' ? player1 : player2}, you're up!`;
         }

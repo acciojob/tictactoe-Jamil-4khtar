@@ -62,7 +62,7 @@ const submitButton = document.getElementById('submit');
             }
 
             if (roundWon) {
-                messageDiv.innerText = `${currentPlayer === 'X' ? player1 : player2} congratulations you won!`;
+                messageDiv.innerText = `${currentPlayer === 'x' ? player1 : player2} congratulations you won!`;
                 gameActive = false;
                 return;
             }
@@ -73,6 +73,6 @@ const submitButton = document.getElementById('submit');
                 return;
             }
 
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            messageDiv.innerText = `${currentPlayer === 'X' ? player1 : player2}, you're up!`;
+            currentPlayer = currentPlayer === 'x' ? 'O' : 'x';
+            messageDiv.innerText = `${currentPlayer === 'x' ? player1 : player2}, you're up!`;
         }
